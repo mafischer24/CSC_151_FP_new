@@ -1,0 +1,18 @@
+---
+title: "README"
+author: "Fish and Phaidra"
+date: "4/19/2022"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+## Introduction / Description
+
+
+## Instructions
+
