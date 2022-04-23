@@ -1,5 +1,5 @@
 ---
-title: "README"
+title: "Welcome to the Map Visualizer! (pun?)"
 author: "Fish and Phaidra"
 date: "4/19/2022"
 output: github_document
@@ -9,9 +9,33 @@ output: github_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+![map_visualizer_preview](CSC_151_map/preview.png) 
+![map_visualizer_preview2](CSC_151_map/preview2.png)
 
-## Introduction / Description
+## Introduction
+
+Welcome to our Map Visualizer! Our web app is designed to introduce users to leaflet and shiny in R. Our target audience is Smith College students; however, because the code for our app is available on GitHub, the scope of our audience may be a lot wider.  
+Maps are fun, interactive visualizations that simplify complex concepts, provide context in a geographic setting, visualize where places are, and give instructions for navigation ^[https://www.mapshop.com/10-reasons-why-maps-are-important/]. We hope to educate and empower the user by providing them to explore some of the features that leaflet has to offer.  
+There are two maps with two different sets of features for the user to explore. The data-set we used is quakes. Below is a preview of the first ten rows of the data-set. 
+
+```{r, echo = FALSE}
+quakes[1:10, ]
+```
+
+Both maps have the following features: 
+
+* 5 base maps.
+* A mini window of the world map, with a 'minimize' button.
+
+
+Here is a table of the features unique to each map:
+
+Mapper | Mapper 2                   
+----------------------------------- | ------------------------------------------------
+1. Sliding bar to filter magnitude. | 1. The data points are "clustered" by proximity.
+2. Drop-down menu to select a color palette for the data-points. | 2. Custom markers for each data point based on a range of magnitudes. 
+3. A legend for the colors and a Show/Hide button. | 
+
 
 
 ## Instructions
