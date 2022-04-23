@@ -3,8 +3,8 @@ Welcome to the Map Visualizer! (pun?)
 Fish and Phaidra
 4/19/2022
 
-![map\_visualizer\_preview](CSC_151_map/preview.png)
-![map\_visualizer\_preview2](CSC_151_map/preview2.png)
+![map\_visualizer\_preview](preview.png)
+![map\_visualizer\_preview2](preview2.png)
 
 ## Introduction
 

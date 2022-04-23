@@ -9,8 +9,8 @@ output: github_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-![map_visualizer_preview](CSC_151_map/preview.png) 
-![map_visualizer_preview2](CSC_151_map/preview2.png)
+![map_visualizer_preview](preview.png) 
+![map_visualizer_preview2](preview2.png)
 
 ## Introduction
 
