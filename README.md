@@ -1,25 +1,23 @@
-Welcome to the Map Visualizer! (pun?)
+Welcome to our Map Visualizer!
 ================
 Fish and Phaidra
 4/19/2022
 
-![map\_visualizer\_preview](preview.png)
-![map\_visualizer\_preview2](preview2.png)
+![preview](preview.png) ![preview2](preview2.png)
 
 ## Introduction
 
 Welcome to our Map Visualizer! Our web app is designed to introduce
-users to leaflet and shiny in R. Our target audience is Smith College
-students; however, because the code for our app is available on GitHub,
-the scope of our audience may be a lot wider.  
-Maps are fun, interactive visualizations that simplify complex concepts,
-provide context in a geographic setting, visualize where places are, and
-give instructions for navigation [1]. We hope to educate and empower the
-user by providing them to explore some of the features that leaflet has
-to offer.  
-There are two maps with two different sets of features for the user to
-explore. The data-set we used is quakes. Below is a preview of the first
-ten rows of the data-set.
+users to `leaflet` and `shiny` in R. Our target audience is Smith
+College students; however, because the code for our app is available on
+GitHub, the scope of our audience may be a lot wider. Maps are fun,
+interactive visualizations that simplify complex concepts, provide
+context in a geographic setting, visualize where places are, and give
+instructions for navigation [1]. We hope to educate and empower the user
+by providing them to explore some of the features that leaflet has to
+offer. There are two maps with two different sets of features for the
+user to explore. The data-set we used is `quakes`. Below is a preview of
+the first ten rows of the data-set.
 
     ##       lat   long depth mag stations
     ## 1  -20.42 181.62   562 4.8       41
@@ -47,5 +45,39 @@ Here is a table of the features unique to each map:
 | 3\. A legend for the colors and a Show/Hide button.               |                                                                        |
 
 ## Instructions
+
+Our web app has been posted to the R Shiny server, so for the user’s
+(your) convenience, all you have to do is click on [this link to open
+it.](https://vhcji4-phaidra-martin.shinyapps.io/mapper/)
+
+### Libraries
+
+We used `leaflet` to generate the maps, get the `quake` data, and
+implement some fun features. We used `jsfile` to create the export
+buttons.
+
+### Packages
+
+We used `RColorBrewer` to get the various color palettes. We used
+`shinythemes` to adjust the overall appearance of the web app. We used
+`htmlwidgets` to create the buttons for exporting. We used `testthat` to
+test if our app connects to the R Shiny server.
+
+## Future Addtions
+
+If we had time to work on our R Shiny web app, we would include or
+improve the following things:
+
+1.  Allow the user to import a data-set of their choosing and explore
+    the data through all of Shiny’s wonderful features.
+    -   Example of this
+        [here.](https://matepocs.shinyapps.io/data_analyser/)
+2.  Use CSS resize function to adjust the dimensions of the maps,
+    particularly Mapper 2.
+3.  Add a side-panel or legend for Mapper 2 that indicates the range of
+    magnitudes for each custom icon. Or, alternatively, adjust the size
+    of the icons based on the range of magnitudes.
+    -   See `earthquakeIcons` in `app_export.R` for magnitude ranges.
+4.  A way for users to choose their own custom icons.
 
 [1] <https://www.mapshop.com/10-reasons-why-maps-are-important/>
