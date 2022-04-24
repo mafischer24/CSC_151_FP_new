@@ -3,7 +3,7 @@ Welcome to our Map Visualizer!
 Fish and Phaidra
 4/19/2022
 
-![preview](preview.png) ![preview2](preview2.png)
+![map](map.png) ![map2](map2.png)
 
 ## Introduction
 
