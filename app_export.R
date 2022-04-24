@@ -1,13 +1,14 @@
 #
+# MAP VISUALIZER
+# Phaidra and Fish
+# 
 # Our interactive Shiny app allows the user to explore some of the many features 
 # that leaflet() has to offer. 
 #
-# To launch the web app, all you need to do is 
-# press 'Run App' and 'Open in Browser'. 
+# To launch the web app, all you need to do is press 'Run App' and 'Open in Browser'. 
 # 
 # Enjoy!
 #
-
 
 
 # Load packages.
@@ -18,8 +19,8 @@ library(testthat)
 library(shinythemes)
 library(htmlwidgets)
 
+# Access the jsfile library to create export buttons.
 jsfile <- "https://rawgit.com/rowanwins/leaflet-easyPrint/gh-pages/dist/bundle.js" 
-
 
 
 # ---------------------------------------- UI ---------------------------------------- #
@@ -31,7 +32,7 @@ ui <- fluidPage(
     
     tags$head(tags$script(src = jsfile)),
     
-    # Navigation bar.
+    # Navigation bar with all three subpages.
     navbarPage(
         # Title of navigation bar. 
         title = "Map Visualizer",
@@ -40,7 +41,7 @@ ui <- fluidPage(
         tabPanel(
             title = "Mapper",
             div(class="outer",
-                tags$style(type = "text/css", "html, body {width:100%;height:100%}"), # Can adjust dimensions of map here.
+                tags$style(type = "text/css", "html, body {width:100%;height:100%}"), 
                 # Features of Mapper are in a sidebar.
                 sidebarLayout(
                     sidebarPanel(
@@ -70,7 +71,7 @@ ui <- fluidPage(
         tabPanel(
             title = "Mapper 2",
             div(class="outer",
-                tags$style(type = "text/css", "html, body {width:100%;height:100%}"), # Can adjust dimensions of map here. 
+                tags$style(type = "text/css", "html, body {width:100%;height:100%}"), 
                 leafletOutput("cluster_map"),
                 absolutePanel(top = 10, right = 10,
                 )
@@ -105,13 +106,14 @@ server <- function(input, output) {
         colorNumeric(input$colors, quakes$mag)
     })
     
-    # Outputs the map. 
+    # Outputs the map for Mapper. 
     output$basic_map <- renderLeaflet({
         # Use leaflet() here, and only include aspects of the map that
         # won't need to change dynamically (at least, not unless the
         # entire map is being torn down and recreated).
         leaflet(quakes) %>% 
             addTiles() %>%
+            # Creates export button. 
             onRender(
                 "function(el, x) {
             L.easyPrint({
@@ -129,11 +131,11 @@ server <- function(input, output) {
             addProviderTiles(providers$CartoDB.Positron, group = "Greyscale Map") %>%
             addProviderTiles(providers$Esri.NatGeoWorldMap, group = "Nat. Geo. Map") %>% 
             addProviderTiles(providers$Esri.WorldStreetMap, group = "Street Map") %>% 
-            # Creates the small map in bottomr right corner, with toggle to collapse it. 
+            # Creates the small map in bottom right corner, with toggle to collapse it. 
             addMiniMap(
                 tiles = providers$Esri.WorldStreetMap,
                 toggleDisplay = TRUE) %>% 
-            # Panel with different basemaps.  
+            # Panel with different base maps.  
             addLayersControl(
                 baseGroups = c("Default Map", "Black/White Map", 
                                "Greyscale Map", "Nat. Geo. Map", "Street Map"),
@@ -195,10 +197,11 @@ server <- function(input, output) {
         iconAnchorX = 22, iconAnchorY = 94
     )
     
-    # Outputs the map. 
+    # Outputs the map for Mapper 2. 
     output$cluster_map <- renderLeaflet({
         leaflet(quakes) %>% 
             addTiles() %>% 
+            # Create export button here. 
             onRender(
                 "function(el, x) {
             L.easyPrint({
