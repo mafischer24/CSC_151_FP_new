@@ -14,7 +14,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Introduction
 
-Welcome to our Map Visualizer! Our web app is designed to introduce users to `leaflet` and `shiny` in R. Our target audience is Smith College students; however, because the code for our app is available on GitHub, the scope of our audience may be a lot wider. Maps are fun, interactive visualizations that simplify complex concepts, provide context in a geographic setting, visualize where places are, and give instructions for navigation ^[https://www.mapshop.com/10-reasons-why-maps-are-important/]. We hope to educate and empower the user by providing them to explore some of the features that leaflet has to offer. There are two maps with two different sets of features for the user to explore. The data-set we used is `quakes`. Below is a preview of the first ten rows of the data-set.
+Welcome to our Map Visualizer! Our web app is designed to introduce users to `leaflet` and `shiny` in R. Our target audience is Smith College students; however, because the code for our app is available on GitHub, the scope of our audience may be a lot wider. Maps are fun, interactive visualizations that simplify complex concepts, provide context in a geographic setting, visualize where places are, and give instructions for navigation ^[https://www.mapshop.com/10-reasons-why-maps-are-important/]. We hope to educate and empower the user by providing them with the ability to explore some of the features that leaflet has to offer. There are two maps with two different sets of features for the user to explore. The data-set we used is `quakes`. Below is a preview of the first ten rows of the data-set.
 
 ```{r, echo = FALSE}
 quakes[1:10, ]
